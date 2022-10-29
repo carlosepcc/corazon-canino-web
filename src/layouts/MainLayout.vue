@@ -18,7 +18,7 @@
         </q-toolbar-title>
 
       </q-toolbar>
-      <q-tabs align="justify" inline-label narrow-indicator>
+      <q-tabs align="justify" :inline-label="false" narrow-indicator>
         <!-- <q-route-tab to="/" label="Inicio" /> -->
         <q-route-tab to="/" label="Inicio" icon="pets" />
         <q-route-tab to="/about" label="Acerca" icon="info" />
