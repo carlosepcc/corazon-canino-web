@@ -37,7 +37,7 @@
     </q-card>
   </q-page>
 </template>
-<style>
+<style scoped>
 .index-card {
   width: 100%;
   max-width: 600px;

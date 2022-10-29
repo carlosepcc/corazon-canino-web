@@ -86,3 +86,13 @@ const orgs = [
   },
 ]
 </script>
+<style scoped>
+a {
+  text-decoration: none;
+  color: var(--q-primary);
+}
+
+a:hover {
+  color: var(--q-accent);
+}
+</style>
