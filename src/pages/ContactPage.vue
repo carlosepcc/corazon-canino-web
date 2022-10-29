@@ -9,54 +9,57 @@
             <img v-if="contact.img" :src="contact.img" :alt="contact.name" />
             <span v-else v-html="contact.name[0]"></span>
 
-            <q-badge style="backdrop-filter: blur(5px); background: #9005 !important" :title="contact.cargo" floating
-              color="transparent" class="text-weight-bold">{{ contact.cargo }}</q-badge>
+            <q-badge rounded v-if="contact.cargo" :title="contact.cargo" floating color="transparent"
+              class="text-weight-bold">
+              {{ contact.cargo }}</q-badge>
           </q-avatar>
         </q-item-section>
         <q-item-section>
           <q-item-label>
             {{ contact.name }}</q-item-label>
-          <q-item-label caption>+{{ contact.wa }}</q-item-label>
+          <q-item-label caption>{{ contact.wa ?? contact.link ?? '' }}</q-item-label>
         </q-item-section>
       </q-item>
     </div>
 
     <h7 id="organizaciones-apoyando">ORGANIZACIONES QUE APOYAN</h7>
     <div class="column alig-start">
-      <q-item v-for="org in orgs" v-bind:key="org.link" clickable v-ripple :href="`https://${org.link}`"
-        target="_blank">
+      <q-item v-for="org in orgs" v-bind:key="org.link" :title="org.description" clickable v-ripple
+        :href="`https://${org.link}`" target="_blank">
         <q-item-section side>
           <q-avatar rounded size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
             <img v-if="org.logo" :src="org.logo" :alt="org.name[0]" />
             <span v-else v-html="org.name[0]"></span>
 
-            <q-badge style="backdrop-filter: blur(5px); background: #9005 !important" :title="org.country" floating
-              color="transparent" class="text-weight-bold">{{ org.country }}</q-badge>
+            <q-badge rounded :title="org.country" floating color="transparent" class="text-weight-bold">{{ org.country
+            }}
+            </q-badge>
           </q-avatar>
         </q-item-section>
         <q-item-section>
           <q-item-label>
             {{ org.name }}</q-item-label>
-          <q-item-label caption>{{ org.link }}</q-item-label>
+          <q-item-label caption>{{ org.description.slice(0, 60) }}..</q-item-label>
         </q-item-section>
       </q-item>
     </div>
     <h7 id="sitios-de-interes">SITIOS DE INTERÉS</h7>
-    <div class="column alig-start">
-      <q-item v-for="o in other" v-bind:key="o.link" clickable v-ripple :href="`https://${o.link}`" target="_blank">
+    <div class="column align-start">
+      <q-item v-for="o in other" v-bind:key="o.link" clickable v-ripple :href="`https://${o.link}`" :title="o.link"
+        target="_blank">
         <q-item-section side>
           <q-avatar rounded size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
             <img v-if="o.img" :src="o.img" :alt="o.name[0]" />
             <span v-else v-html="o.name[0]"></span>
 
-            <q-badge style="backdrop-filter: blur(5px); background: #9005 !important" :title="o.country" floating
-              color="transparent" class="text-weight-bold">{{ o.country }}</q-badge>
+            <q-badge :title="o.country" rounded floating color="transparent" class="text-weight-bold">{{ o.country }}
+            </q-badge>
           </q-avatar>
         </q-item-section>
         <q-item-section>
           <q-item-label>
             {{ o.name }}</q-item-label>
-          <q-item-label caption>{{ o.link }}</q-item-label>
+          <q-item-label caption>{{ o.description }}</q-item-label>
         </q-item-section>
       </q-item>
     </div>
@@ -79,6 +82,13 @@ const contacts = [
     wa: '5352662875',
     t: '5352662875',
   },
+  {
+    img: s.value.logo,
+    cargo: '',
+    name: 'en Facebook',
+    link: s.value.fb,
+    description: s.value.description
+  },
 ]
 const orgs = [
   {
@@ -86,13 +96,14 @@ const orgs = [
     country: 'cu',
     name: 'Cubanos en Defensa de los Animales',
     link: 'facebook.com/CeDACuba',
+    description: 'Proyecto voluntario radicado en La Habana que dirige su trabajo a la disminución de animales sin hogar, a promover la tenencia responsable y la protección animal.'
   },
   {
     logo: 'https://pbs.twimg.com/profile_images/1410795631698923521/2TsMj7ff_400x400.jpg',
     country: 'cu',
     name: 'Protección Animal SOS-Pasos',
     link: 'twitter.com/pasos_cuba',
-    description: 'Twitter oficial de Protección Animal SOS-Pasos',
+    description: 'Grupo de jóvenes cubanos que luchan por el bienestar animal en Cuba. Teniendo como premisa rescatar, curar, esterilizar y dar en adopción responsable.',
   },
 ]
 const other = [
@@ -101,6 +112,7 @@ const other = [
     country: 'cu',
     name: `${s.value.name} en Facebook`,
     link: s.value.fb,
+    description: s.value.description
   },
   {
     img: 'https://elrefugiocubaorg.files.wordpress.com/2020/07/cropped-cabecera5.jpg',
@@ -114,7 +126,7 @@ const other = [
     country: 'cu',
     name: 'Bienestar Animal en Cuba',
     link: 'www.bacuba.org',
-    description: 'Sitio oficial de BANCuba',
+    description: 'Red de voluntarios sin ánimo de lucro e independiente',
   },
   {
     img: '',
@@ -128,7 +140,7 @@ const other = [
     country: 'cu',
     name: 'Universidad de las Ciencias Informáticas',
     link: 'www.uci.cu',
-    description: 'Sitio oficial de la Universidad de las Ciencias Informáticas',
+    description: 'Sitio oficial de la UCI',
   },
 ]
 </script>
@@ -144,5 +156,21 @@ a:hover {
 
 h7 {
   margin: 56px auto 24px auto;
+  color: #0006;
+}
+
+.q-badge {
+  backdrop-filter: blur(5px);
+  background: #0002 !important
+}
+
+div.column {
+  max-width: 600px;
+}
+
+div .q-item {
+  border: 1px solid #0001;
+  border-radius: 4px;
+  margin-bottom: 12px;
 }
 </style>

@@ -21,7 +21,7 @@
       <q-tabs align="center">
         <!-- <q-route-tab to="/" label="Inicio" /> -->
         <q-route-tab to="/" label="Inicio" />
-        <q-route-tab to="/about" label="Acerca del proyecto" />
+        <q-route-tab to="/about" label="Acerca" />
         <q-route-tab to="/contact" label="Contacto" />
       </q-tabs>
     </q-header>
