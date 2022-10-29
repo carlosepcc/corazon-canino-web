@@ -20,7 +20,7 @@
         </q-item-section>
       </q-item>
     </div>
-    <q-separator />
+
     <h7 id="organizaciones-apoyando">ORGANIZACIONES QUE APOYAN</h7>
     <div class="column alig-start">
       <q-item v-for="org in orgs" v-bind:key="org.link" clickable v-ripple :href="`https://${org.link}`"
@@ -43,6 +43,9 @@
     </div>
     <h7 id="sitios-de-interes">SITIOS DE INTERÉS</h7>
 
+    <a href="https://facebook.com/CorazonCanicoUCI" target="_blank">
+      <q-icon name=facebook class="q-mr-md" />Corazón Canino en Facebook
+    </a>
     <a href="https://elrefugiocuba.org" target="_blank" title="Revista de protección animal en Cuba">El Refugio</a>
 
     <a href="https://bacuba.org/donaciones" target="_blank">Bienestar Animal en Cuba</a>
@@ -74,7 +77,7 @@ const contacts = [
     name: 'Samira de las Mercedes',
     wa: '5352662875',
     t: '5352662875',
-  }
+  },
 ]
 const orgs = [
   {
@@ -99,5 +102,9 @@ a {
 
 a:hover {
   color: var(--q-accent);
+}
+
+h7 {
+  margin: 56px auto 24px auto;
 }
 </style>

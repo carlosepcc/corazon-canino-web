@@ -3,10 +3,18 @@
     <q-header elevated class="bg-primary text-white" height-hint="98">
       <q-toolbar>
         <q-toolbar-title>
-          <q-avatar class="bg-white q-mr-md" size="xl">
-            <img :src="s.logo" />
-          </q-avatar>
-          <b>Corazón Canino</b>
+          <q-item>
+            <q-item-section side>
+              <q-item clickable v-ripple to="/">
+                <q-avatar class="q-mr-md" size="xl" rounded>
+                  <img :src="s.logo" />
+                </q-avatar>
+              </q-item>
+            </q-item-section>
+            <q-item-section>
+              <b>Corazón Canino</b>
+            </q-item-section>
+          </q-item>
         </q-toolbar-title>
       </q-toolbar>
 

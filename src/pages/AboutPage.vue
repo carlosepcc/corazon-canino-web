@@ -1,5 +1,6 @@
 <template>
   <q-page class="column items-center justify-evenly" padding>
+    <q-img :src="s.logo" width="256px" style="margin-bottom: -100px;" />
     <q-card bordered flat class="index-card">
       <q-card-section>
         Corazón Canino es un proyecto conjunto con organizaciones de bienestar animal que busca
@@ -37,6 +38,9 @@
     </q-card>
   </q-page>
 </template>
+<script setup>
+import s from 'src/composables/useState'
+</script>
 <style scoped>
 .index-card {
   width: 100%;
