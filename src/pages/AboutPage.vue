@@ -49,7 +49,7 @@ import s from 'src/composables/useState'
 
 a {
   text-decoration: none;
-  color: var(--q-primary);
+  color: inherit;
 }
 
 a:hover {

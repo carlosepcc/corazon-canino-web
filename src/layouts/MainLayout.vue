@@ -18,11 +18,11 @@
         </q-toolbar-title>
       </q-toolbar>
 
-      <q-tabs align="center">
+      <q-tabs align="justify">
         <!-- <q-route-tab to="/" label="Inicio" /> -->
-        <q-route-tab to="/" label="Inicio" />
-        <q-route-tab to="/about" label="Acerca" />
-        <q-route-tab to="/contact" label="Contacto" />
+        <q-route-tab to="/" label="Inicio" icon="pets" />
+        <q-route-tab to="/about" label="Acerca" icon="info" />
+        <q-route-tab to="/contact" label="Contacto" icon="chat" />
       </q-tabs>
     </q-header>
 
