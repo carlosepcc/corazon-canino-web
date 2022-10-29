@@ -18,7 +18,7 @@
         </q-toolbar-title>
       </q-toolbar>
 
-      <q-tabs align="left">
+      <q-tabs align="center">
         <!-- <q-route-tab to="/" label="Inicio" /> -->
         <q-route-tab to="/" label="Inicio" />
         <q-route-tab to="/about" label="Acerca del proyecto" />
