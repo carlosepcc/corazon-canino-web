@@ -26,7 +26,7 @@
       <q-item v-for="org in orgs" v-bind:key="org.link" clickable v-ripple :href="`https://${org.link}`"
         target="_blank">
         <q-item-section side>
-          <q-avatar size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
+          <q-avatar rounded size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
             <img v-if="org.logo" :src="org.logo" :alt="org.name[0]" />
             <span v-else v-html="org.name[0]"></span>
 
@@ -42,23 +42,24 @@
       </q-item>
     </div>
     <h7 id="sitios-de-interes">SITIOS DE INTERÉS</h7>
+    <div class="column alig-start">
+      <q-item v-for="o in other" v-bind:key="o.link" clickable v-ripple :href="`https://${o.link}`" target="_blank">
+        <q-item-section side>
+          <q-avatar rounded size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
+            <img v-if="o.img" :src="o.img" :alt="o.name[0]" />
+            <span v-else v-html="o.name[0]"></span>
 
-    <a href="https://facebook.com/CorazonCanicoUCI" target="_blank">
-      <q-icon name=facebook class="q-mr-md" />Corazón Canino en Facebook
-    </a>
-    <a href="https://elrefugiocuba.org" target="_blank" title="Revista de protección animal en Cuba">El Refugio</a>
-
-    <a href="https://bacuba.org/donaciones" target="_blank">Bienestar Animal en Cuba</a>
-
-
-    <a target="_blank" href="http://www.cubananimalrescue.org">Cuban Animal Rescue</a>
-
-    <hr />
-    <a target="_blank" href="https://www.uci.cu"
-      title="Sitio web oficial de la Universidad de las Ciencias Informáticas">Universidad
-      de
-      las Ciencias Informáticas</a>
-
+            <q-badge style="backdrop-filter: blur(5px); background: #9005 !important" :title="o.country" floating
+              color="transparent" class="text-weight-bold">{{ o.country }}</q-badge>
+          </q-avatar>
+        </q-item-section>
+        <q-item-section>
+          <q-item-label>
+            {{ o.name }}</q-item-label>
+          <q-item-label caption>{{ o.link }}</q-item-label>
+        </q-item-section>
+      </q-item>
+    </div>
   </q-page>
 </template>
 <script setup lang="ts">
@@ -91,6 +92,43 @@ const orgs = [
     country: 'cu',
     name: 'Protección Animal SOS-Pasos',
     link: 'twitter.com/pasos_cuba',
+    description: 'Twitter oficial de Protección Animal SOS-Pasos',
+  },
+]
+const other = [
+  {
+    img: s.value.logo,
+    country: 'cu',
+    name: `${s.value.name} en Facebook`,
+    link: s.value.fb,
+  },
+  {
+    img: 'https://elrefugiocubaorg.files.wordpress.com/2020/07/cropped-cabecera5.jpg',
+    country: 'cu',
+    name: 'El Refugio',
+    link: 'www.elrefugiocuba.org',
+    description: 'Revista de protección animal en Cuba',
+  },
+  {
+    img: 'https://i0.wp.com/bacuba.org/wp-content/uploads/2021/11/20211114_190314.jpg?fit=192%2C192&ssl=1',
+    country: 'cu',
+    name: 'Bienestar Animal en Cuba',
+    link: 'www.bacuba.org',
+    description: 'Sitio oficial de BANCuba',
+  },
+  {
+    img: '',
+    country: 'org',
+    name: 'Cuban Animal Rescue',
+    link: 'www.cubananimalrescue.org',
+    description: 'Sitio oficial de Cuban Animal Rescue',
+  },
+  {
+    img: 'https://eva.uci.cu/theme/trema/pix/frontpage/UCI_logon.png',
+    country: 'cu',
+    name: 'Universidad de las Ciencias Informáticas',
+    link: 'www.uci.cu',
+    description: 'Sitio oficial de la Universidad de las Ciencias Informáticas',
   },
 ]
 </script>
