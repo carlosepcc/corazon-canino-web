@@ -13,7 +13,7 @@
       <q-tabs align="left">
         <!-- <q-route-tab to="/" label="Inicio" /> -->
         <q-route-tab to="/" label="Inicio" />
-        <q-route-tab to="/about" label="Acerca de" />
+        <q-route-tab to="/about" label="Acerca del proyecto" />
         <q-route-tab to="/contact" label="Contacto" />
       </q-tabs>
     </q-header>
