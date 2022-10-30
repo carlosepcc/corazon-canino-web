@@ -1,73 +1,83 @@
 <template>
-  <q-page class="row justify-evenly" padding>
-    <section>
-      <h7>CONTACTO</h7>
-      <div class="column align-start q-mt-lg q-mb-xl">
-        <q-item v-for="contact in contacts" v-bind:key="contact.wa" clickable v-ripple
-          :href="`https://wa.me/${contact.wa}`" target="_blank">
-          <q-item-section side>
-            <q-avatar size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
-              <img v-if="contact.img" :src="contact.img" :alt="contact.name" />
-              <span v-else v-html="contact.name[0]"></span>
+  <q-page class="column" padding>
+    <div class="row justify-evenly">
+      <section>
+        <h7>CONTACTO</h7>
+        <div class="column align-start q-mt-lg q-mb-xl">
+          <q-item v-for="contact in contacts" v-bind:key="contact.wa" clickable v-ripple
+            :href="`https://wa.me/${contact.wa}`" target="_blank">
+            <q-item-section side>
+              <q-avatar size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
+                <img v-if="contact.img" :src="contact.img" :alt="contact.name" />
+                <span v-else v-html="contact.name[0]"></span>
 
-              <q-badge rounded v-if="contact.cargo" :title="contact.cargo" floating color="transparent"
-                class="text-weight-bold">
-                {{ contact.cargo }}</q-badge>
-            </q-avatar>
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>
-              {{ contact.name }}</q-item-label>
-            <q-item-label caption>{{ contact.wa ?? contact.link ?? '' }}</q-item-label>
-          </q-item-section>
-        </q-item>
-      </div>
-    </section>
-    <section>
-      <h7 id="organizaciones-apoyando">ORGANIZACIONES QUE APOYAN</h7>
-      <div class="column align-start q-mt-lg q-mb-xl">
-        <q-item v-for="org in orgs" v-bind:key="org.link" :title="org.description" clickable v-ripple
-          :href="`https://${org.link}`" target="_blank">
-          <q-item-section side>
-            <q-avatar rounded size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
-              <img v-if="org.logo" :src="org.logo" :alt="org.name[0]" />
-              <span v-else v-html="org.name[0]"></span>
+                <q-badge rounded v-if="contact.cargo" :title="contact.cargo" floating color="transparent"
+                  class="text-weight-bold">
+                  {{ contact.cargo }}</q-badge>
+              </q-avatar>
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>
+                {{ contact.name }}</q-item-label>
+              <q-item-label caption>{{ contact.wa ?? contact.link ?? '' }}</q-item-label>
+            </q-item-section>
+          </q-item>
+        </div>
+      </section>
+      <section>
+        <h7 id="organizaciones-apoyando">ORGANIZACIONES QUE APOYAN</h7>
+        <div class="column align-start q-mt-lg q-mb-xl">
+          <q-item v-for="org in orgs" v-bind:key="org.link" :title="org.description" clickable v-ripple
+            :href="`https://${org.link}`" target="_blank">
+            <q-item-section side>
+              <q-avatar rounded size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
+                <img v-if="org.logo" :src="org.logo" :alt="org.name[0]" />
+                <span v-else v-html="org.name[0]"></span>
 
-              <!-- <q-badge rounded :title="org.country" floating color="transparent" class="text-weight-bold">{{ org.country
+                <!-- <q-badge rounded :title="org.country" floating color="transparent" class="text-weight-bold">{{ org.country
             }}
             </q-badge> -->
-            </q-avatar>
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>
-              {{ org.name }}</q-item-label>
-            <q-item-label caption>{{ org.description.slice(0, 60) }}..</q-item-label>
-          </q-item-section>
-        </q-item>
-      </div>
-    </section>
-    <section>
-      <h7 id="sitios-de-interes">SITIOS DE INTERÉS</h7>
-      <div class="column align-start q-mt-lg q-mb-xl">
-        <q-item v-for="o in other" v-bind:key="o.link" clickable v-ripple :href="`https://${o.link}`" :title="o.link"
-          target="_blank">
-          <q-item-section side>
-            <q-avatar rounded size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
-              <img v-if="o.img" :src="o.img" :alt="o.name[0]" />
-              <span v-else v-html="o.name[0]"></span>
+              </q-avatar>
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>
+                {{ org.name }}</q-item-label>
+              <q-item-label caption>{{ org.description.slice(0, 60) }}..</q-item-label>
+            </q-item-section>
+          </q-item>
+        </div>
+      </section>
+      <section>
+        <h7 id="sitios-de-interes">SITIOS DE INTERÉS</h7>
+        <div class="column align-start q-mt-lg q-mb-xl">
+          <q-item v-for="o in other" v-bind:key="o.link" clickable v-ripple :href="`https://${o.link}`" :title="o.link"
+            target="_blank">
+            <q-item-section side>
+              <q-avatar rounded size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
+                <img v-if="o.img" :src="o.img" :alt="o.name[0]" />
+                <span v-else v-html="o.name[0]"></span>
 
-              <!-- <q-badge :title="o.country" rounded floating color="transparent" class="text-weight-bold">{{ o.country }}
+                <!-- <q-badge :title="o.country" rounded floating color="transparent" class="text-weight-bold">{{ o.country }}
             </q-badge> -->
-            </q-avatar>
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>
-              {{ o.name }}</q-item-label>
-            <q-item-label caption>{{ o.description }}</q-item-label>
-          </q-item-section>
-        </q-item>
+              </q-avatar>
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>
+                {{ o.name }}</q-item-label>
+              <q-item-label caption>{{ o.description }}</q-item-label>
+            </q-item-section>
+          </q-item>
+        </div>
+      </section>
+      <img class="img-building" src="public/img/buildings-toon.svg">
+    </div>
+    <span class="exclamation">
+      <div class="plate">
       </div>
-    </section>
+      <img src="img/dog.svg" />
+      <img src="img/dog.svg" />
+    </span>
+
   </q-page>
 </template>
 <script setup lang="ts">
@@ -177,5 +187,111 @@ div .q-item {
   border: 1px solid #0001;
   border-radius: 4px;
   margin-bottom: 12px;
+}
+
+/* ANIMATIONS AND TRANSITIONS */
+/*DOGS*/
+.exclamation * {
+  transition: .4s;
+}
+
+.plate:hover {
+  transform: scale(1.1);
+}
+
+.plate:active {
+  transform: translateY(-2px) rotate(-0.03turn);
+}
+
+.exclamation {
+  background: linear-gradient(#0001, white);
+  padding: 16px 32px 0;
+  margin: 12rem auto 0;
+  width: 90%;
+  min-width: fit-content;
+  display: block;
+  text-align: center;
+  border-radius: 64px 64px 0 0;
+  font-weight: 700;
+  font-size: large;
+  color: var(--whiteglass1);
+  position: relative;
+}
+
+.exclamation img:nth-child(2) {
+  position: absolute;
+  top: -31px;
+  left: 64px;
+}
+
+.exclamation img:nth-child(3) {
+  position: absolute;
+  top: -40px;
+  right: 80px;
+  transform: scale(-2, 2);
+}
+
+.exclamation .plate {
+  background: #444;
+  border-radius: 0 0 8px 8px;
+  position: absolute;
+  top: -12px;
+  height: 12px;
+  right: 45%;
+  width: 32px;
+}
+
+.plate.full:before {
+  position: absolute;
+  bottom: 7px;
+  content: "🍗";
+}
+
+.plate.full:after {
+  position: absolute;
+  bottom: 7px;
+  left: 0;
+  transform: scaleX(-1);
+  content: "🍖";
+}
+
+.exclamation>img:nth-child(2):hover {
+  left: 26px;
+
+  transform: skew(3deg, -8deg);
+}
+
+/*The dogs gets closer to the plate when you hover it*/
+.plate:hover+img {
+  left: 38%;
+}
+
+.plate:hover+img+img {
+  right: 30%;
+}
+
+/*The dogs stay even closer to the plate while it's full*/
+.plate.full+img {
+  left: 44%;
+}
+
+.plate.full+img+img {
+  right: 38%;
+  top: -36px;
+}
+
+.exclamation>img:nth-child(3):hover {
+  right: 14px;
+  transform: scale(-2, 2);
+
+}
+
+.img-building {
+  filter: blur(6px);
+  z-index: -1;
+  width: 400px;
+  position: relative;
+  bottom: -230px;
+  margin-top: -300px;
 }
 </style>
