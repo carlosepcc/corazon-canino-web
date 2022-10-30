@@ -4,8 +4,8 @@
       <section>
         <span class="text-h7">CONTACTO</span>
         <div class="column align-start q-mt-lg q-mb-xl">
-          <q-item v-for="contact in contacts" v-bind:key="contact.phone" class="contact-item" clickable v-ripple
-            :href="`https://wa.me/${contact.phone}`" target="_blank">
+          <q-item v-for="contact in contacts" v-bind:key="contact.phone" class="contact-item" clickable
+            :href="`tel:${contact.phone}`">
             <q-item-section side>
               <q-avatar size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
                 <img v-if="contact.img" :src="contact.img" :alt="contact.name" />
@@ -19,19 +19,31 @@
             <q-item-section title="Contactar a través de WhatsApp">
               <q-item-label>
                 {{ contact.name }}</q-item-label>
-              <q-item-label caption>{{ contact.phone ?? contact.link ?? '' }}</q-item-label>
+              <q-item-label caption>{{ contact.phone ?? contact.link ?? '' }}
+              </q-item-label>
             </q-item-section>
             <q-item-section side>
-              <q-btn-group push>
-                <q-btn round v-if="contact.phone" push icon="call" :href="`tel:${contact.phone}`" title="Llamar" />
-                <q-btn round v-if="contact.phone" push icon="sms" :href="`sms:${contact.phone}`" title="Enviar SMS" />
+              <q-btn-group flat>
 
-                <q-btn round v-if="contact.email" push icon="email" :href="`mailto:${contact.email}`"
-                  :title="`Enviar email a ${contact.email}`" />
-                <q-btn round v-if="contact.fb" push icon="facebook" :href="`https://www.facebook.com/${contact.fb}`"
-                  title="Contactar a través de Facebook" />
-                <q-btn round v-if="contact.phone" push icon="maps_ugc" :href="`https://wa.me/${contact.phone}`"
-                  title="Contactar a través de WhatsApp" />
+                <q-btn round v-if="contact.phone" flat icon="call" :href="`tel:${contact.phone}`" title="Llamar" />
+                <q-btn flat icon="more_vert">
+
+                  <q-menu anchor="bottom left" self="top right">
+                    <q-btn-group push>
+                      <q-btn round v-if="contact.phone" push icon="sms" :href="`sms:${contact.phone}`"
+                        title="Enviar SMS" />
+                      <q-btn round v-if="contact.email" push icon="email" :href="`mailto:${contact.email}`"
+                        :title="`Enviar email a ${contact.email}`" />
+                      <q-btn round v-if="contact.geo" push icon="place" :href="`geo:${contact.email}`"
+                        :title="`Ir a ${contact.geo}`" />
+                      <q-btn round v-if="contact.fb" push icon="facebook"
+                        :href="`https://www.facebook.com/${contact.fb}`" title="Contactar a través de Facebook" />
+                      <q-btn round v-if="contact.phone" push icon="maps_ugc" :href="`https://wa.me/${contact.phone}`"
+                        title="Contactar a través de WhatsApp" />
+
+                    </q-btn-group>
+                  </q-menu>
+                </q-btn>
               </q-btn-group>
 
             </q-item-section>
@@ -105,6 +117,7 @@ const contacts = [
     cargo: 'F',
     name: 'Dayana Bolaños Banzo',
     phone: '5353054361',
+    geo: '22.985059,-82.465497',
   },
   /*
     img: 'https://scontent-mia3-2.xx.fbcdn.net/v/t1.6435-1/100927188_717586952330021_1562532823389175808_n.jpg?stp=c0.11.320.320a_dst-jpg_p320x320&_nc_cat=105&ccb=1-7&_nc_sid=7206a8&_nc_ohc=ohdQxuzwi-QAX_ZjjEq&_nc_ht=scontent-mia3-2.xx&oh=00_AfB5yW1Db45LM-z3Y3LCvyIXpD6n3tUGzwpzBEF9u2LESw&oe=6381FEB5',
@@ -273,7 +286,7 @@ section:first-child .q-item {
 .exclamation {
   background: linear-gradient(#0001, white);
   padding: 16px 32px 0;
-  margin: 12rem auto 0;
+  margin-top: 120px;
   width: 90%;
   min-width: fit-content;
   display: block;
@@ -283,6 +296,16 @@ section:first-child .q-item {
   font-size: large;
   color: var(--whiteglass1);
   position: relative;
+}
+
+.img-building {
+  filter: blur(6px);
+  z-index: -1;
+  height: 400px;
+  max-width: 98%;
+  position: relative;
+  bottom: -230px;
+  margin-top: -480px;
 }
 
 .exclamation img:nth-child(2) {
@@ -351,15 +374,5 @@ section:first-child .q-item {
   right: 14px;
   transform: scale(-2, 2);
 
-}
-
-.img-building {
-  filter: blur(6px);
-  z-index: -1;
-  height: 400px;
-  max-width: 98%;
-  position: relative;
-  bottom: -230px;
-  margin-top: -400px;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <q-page class="column items-center justify-evenly" padding>
-    <q-img :src="s.logo" width="256px" style="margin-bottom: -100px;" />
+    <q-img src="icons/imagotipo.webp" width="256px" style="margin-bottom: -50px;" />
     <q-card bordered flat class="index-card">
       <q-card-section>
         Corazón Canino es un proyecto conjunto con organizaciones de bienestar animal que busca
@@ -14,7 +14,7 @@
       </q-card-section>
     </q-card>
     <q-card bordered flat class="index-card">
-      <q-card-section class="text-h7">META</q-card-section>
+      <q-card-section class="text-h7 q-mb-xs">META</q-card-section>
       <q-card-section>
         La no existencia, para <strong>finales del 2022</strong>, de perros sin
         <strong>esterilizar</strong> y <strong>desparasitar</strong> dentro de la <a class="quiet-anchor"
