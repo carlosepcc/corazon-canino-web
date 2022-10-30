@@ -4,8 +4,7 @@
       <section>
         <span class="text-h7">CONTACTO</span>
         <div class="column align-start q-mt-lg q-mb-xl">
-          <q-item v-for="contact in contacts" v-bind:key="contact.phone" class="contact-item" clickable
-            :href="`tel:${contact.phone}`">
+          <q-item v-for="contact in contacts" v-bind:key="contact.phone" class="contact-item">
             <q-item-section side>
               <q-avatar size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
                 <img v-if="contact.img" :src="contact.img" :alt="contact.name" />
