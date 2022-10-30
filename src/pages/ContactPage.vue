@@ -2,7 +2,7 @@
   <q-page class="column" padding>
     <div class="row justify-evenly">
       <section>
-        <h7>CONTACTO</h7>
+        <span class="text-h7">CONTACTO</span>
         <div class="column align-start q-mt-lg q-mb-xl">
           <q-item v-for="contact in contacts" v-bind:key="contact.wa" clickable v-ripple
             :href="`https://wa.me/${contact.wa}`" target="_blank">
@@ -25,7 +25,7 @@
         </div>
       </section>
       <section>
-        <h7 id="organizaciones-apoyando">ORGANIZACIONES QUE APOYAN</h7>
+        <span class="text-h7">ORGANIZACIONES QUE APOYAN</span>
         <div class="column align-start q-mt-lg q-mb-xl">
           <q-item v-for="org in orgs" v-bind:key="org.link" :title="org.description" clickable v-ripple
             :href="`https://${org.link}`" target="_blank">
@@ -48,7 +48,7 @@
         </div>
       </section>
       <section>
-        <h7 id="sitios-de-interes">SITIOS DE INTERÉS</h7>
+        <span class="text-h7">SITIOS DE INTERÉS</span>
         <div class="column align-start q-mt-lg q-mb-xl">
           <q-item v-for="o in other" v-bind:key="o.link" clickable v-ripple :href="`https://${o.link}`" :title="o.link"
             target="_blank">
@@ -72,16 +72,18 @@
       <img class="img-building" src="public/img/buildings-toon.svg">
     </div>
     <span class="exclamation">
-      <div class="plate">
+      <div class="plate" @click="(e) => refillPlate(e)">
       </div>
-      <img src="img/dog.svg" />
-      <img src="img/dog.svg" />
+      <img src="img/dog.svg" ref="pup" @mouseenter="pupBark" />
+      <img src="img/dog.svg" ref="dog" @mouseenter="dogBark.play" />
+      {{ count }}
     </span>
 
   </q-page>
 </template>
 <script setup lang="ts">
 import s from 'src/composables/useState'
+import { ref } from 'vue';
 const contacts = [
   {
     img: 'https://scontent-mia3-2.xx.fbcdn.net/v/t39.30808-1/300669749_1762409884118720_3567962365987802077_n.jpg?stp=dst-jpg_p320x320&_nc_cat=102&ccb=1-7&_nc_sid=7206a8&_nc_ohc=2oJKDTfJGXcAX8a6Ccj&_nc_oc=AQnCYFTgE3SxsfEOTEXhhaectvTc5Y0VMm6dRa5NSXiGSTczw2UZHAxTVbuphmoQ1z0&_nc_ht=scontent-mia3-2.xx&oh=00_AfBIhsDYiBbZfhA_kWeq1F7EjCOwpGD2Fkxc-lcd7stfqA&oe=63629BEA',
@@ -158,6 +160,38 @@ const other = [
     description: 'Sitio oficial de la UCI',
   },
 ]
+
+const dogBark = new Audio('public/audio/dog_barking-6296.ogg')
+const littleDogBark = new Audio('https://bigsoundbank.com/UPLOAD/ogg/0682.ogg')
+const fillAudio = new Audio('https://bigsoundbank.com/UPLOAD/ogg/1331.ogg')
+const grownBark = new Audio('https://bigsoundbank.com/UPLOAD/ogg/2354.ogg')
+const pup = ref()
+const dog = ref()
+function pupBark(): void {
+  console.log('barking')
+  if (count.value < 1.9) {
+    littleDogBark.play()
+  } else {
+    grownBark.play()
+  }
+
+}
+//ANIMATIONS
+const count = ref(1)
+const refillPlate = (event: MouseEvent) => {
+  let plate = document.querySelector('.plate')
+  let target = event.target as HTMLDivElement
+  target.classList.add('full')
+  fillAudio.play()
+  setTimeout(() => {
+    plate?.classList.remove('full')
+    dogBark.play()
+    count.value += 0.1
+    pup.value.style.transform = `scale(${count.value < 2 ? count.value : 2})`
+
+  }, 3000)
+
+}
 </script>
 <style scoped>
 a {
@@ -169,7 +203,7 @@ a:hover {
   color: var(--q-accent);
 }
 
-h7 {
+.text-h7 {
   margin-bottom: 24px;
   color: #0006;
 }

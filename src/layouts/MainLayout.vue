@@ -23,9 +23,11 @@
 
     <q-page-container>
       <transition>
-        <keep-alive>
-          <router-view />
-        </keep-alive>
+        <router-view v-slot="{ Component }">
+          <keep-alive>
+            <component :is="Component" />
+          </keep-alive>
+        </router-view>
       </transition>
     </q-page-container>
 
