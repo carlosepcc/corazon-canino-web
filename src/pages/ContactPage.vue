@@ -121,6 +121,13 @@ const orgs = [
     link: 'twitter.com/pasos_cuba',
     description: 'Grupo de jóvenes cubanos que luchan por el bienestar animal en Cuba. Teniendo como premisa rescatar, curar, esterilizar y dar en adopción responsable.',
   },
+  {
+    logo: 'https://scontent-bog1-1.xx.fbcdn.net/v/t1.6435-9/122035111_107843244439330_1635465192292248620_n.jpg?stp=cp0_dst-jpg_e15_p370x247_q65&_nc_cat=109&ccb=1-7&_nc_sid=85a577&efg=eyJpIjoidCJ9&_nc_ohc=r2wumcdPhikAX91Pkk5&tn=0mN2lAi91TDb6Qti&_nc_ht=scontent-bog1-1.xx&oh=00_AfBxktKotQlkBAy65nZPGDG6l6J4cuI-fX9V7I_j_NN2Kg&oe=63838373',
+    country: 'cu',
+    name: 'Equipo de Protección Animal',
+    link: 'www.facebook.com/profile.php?id=100063690655399&lst=100015031837495%3A100063690655399%3A1667144373&eav=AfYO-nZG8a8KDUMTCKa5a0zBC2jnBGJLvjhYydII90uDE1w9ObG1hvs8_kiDUlAfpr8&paipv=0',
+    description: 'Protegemos la vida!!! Todos contamos. ...te atreverías, con nosotros, a hacer la diferencia?',
+  },
 ]
 const other = [
   {
