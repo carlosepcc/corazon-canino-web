@@ -1,8 +1,9 @@
 <template>
   <q-carousel v-model="slide" draggable="false" transition-prev="jump-right" transition-next="jump-left" swipeable
-    control-type="push" animated control-color="primary" prev-icon="pets" next-icon="pets" :vertical="s.isOnMobile"
+    control-type="flat" animated control-color="primary" prev-icon="" next-icon="" :vertical="s.isOnMobile"
     navigation-icon="radio_button_unchecked" navigation padding arrows
     class="shadow-1 rounded-borders bg-white text-secondary">
+
     <template v-slot:navigation-icon="{ active, onClick }">
       <q-btn v-if="active" size="lg" push icon="pets" color="" flat round dense @click="onClick" />
       <q-btn v-else size="sm" push icon="pets" color="" flat round dense @click="onClick" />

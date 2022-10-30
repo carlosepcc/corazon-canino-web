@@ -4,8 +4,8 @@
       <section>
         <span class="text-h7">CONTACTO</span>
         <div class="column align-start q-mt-lg q-mb-xl">
-          <q-item v-for="contact in contacts" v-bind:key="contact.wa" clickable v-ripple
-            :href="`https://wa.me/${contact.wa}`" target="_blank">
+          <q-item v-for="contact in contacts" v-bind:key="contact.phone" class="contact-item" clickable v-ripple
+            :href="`https://wa.me/${contact.phone}`" target="_blank">
             <q-item-section side>
               <q-avatar size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
                 <img v-if="contact.img" :src="contact.img" :alt="contact.name" />
@@ -16,10 +16,24 @@
                   {{ contact.cargo }}</q-badge>
               </q-avatar>
             </q-item-section>
-            <q-item-section>
+            <q-item-section title="Contactar a través de WhatsApp">
               <q-item-label>
                 {{ contact.name }}</q-item-label>
-              <q-item-label caption>{{ contact.wa ?? contact.link ?? '' }}</q-item-label>
+              <q-item-label caption>{{ contact.phone ?? contact.link ?? '' }}</q-item-label>
+            </q-item-section>
+            <q-item-section side>
+              <q-btn-group push>
+                <q-btn round v-if="contact.phone" push icon="call" :href="`tel:${contact.phone}`" title="Llamar" />
+                <q-btn round v-if="contact.phone" push icon="sms" :href="`sms:${contact.phone}`" title="Enviar SMS" />
+
+                <q-btn round v-if="contact.email" push icon="email" :href="`mailto:${contact.email}`"
+                  :title="`Enviar email a ${contact.email}`" />
+                <q-btn round v-if="contact.fb" push icon="facebook" :href="`https://www.facebook.com/${contact.fb}`"
+                  title="Contactar a través de Facebook" />
+                <q-btn round v-if="contact.phone" push icon="maps_ugc" :href="`https://wa.me/${contact.phone}`"
+                  title="Contactar a través de WhatsApp" />
+              </q-btn-group>
+
             </q-item-section>
           </q-item>
         </div>
@@ -27,8 +41,8 @@
       <section>
         <span class="text-h7">ORGANIZACIONES QUE APOYAN</span>
         <div class="column align-start q-mt-lg q-mb-xl">
-          <q-item v-for="org in orgs" v-bind:key="org.link" :title="org.description" clickable v-ripple
-            :href="`https://${org.link}`" target="_blank">
+          <q-item class="contact-item" v-for="org in orgs" v-bind:key="org.link" :title="org.description" clickable
+            v-ripple :href="`https://${org.link}`" target="_blank">
             <q-item-section side>
               <q-avatar rounded size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
                 <img v-if="org.logo" :src="org.logo" :alt="org.name[0]" />
@@ -50,8 +64,8 @@
       <section>
         <span class="text-h7">SITIOS DE INTERÉS</span>
         <div class="column align-start q-mt-lg q-mb-xl">
-          <q-item v-for="o in other" v-bind:key="o.link" clickable v-ripple :href="`https://${o.link}`" :title="o.link"
-            target="_blank">
+          <q-item class="contact-item" v-for="o in other" v-bind:key="o.link" clickable v-ripple
+            :href="`https://${o.link}`" :title="o.link" target="_blank">
             <q-item-section side>
               <q-avatar rounded size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
                 <img v-if="o.img" :src="o.img" :alt="o.name[0]" />
@@ -85,13 +99,14 @@ import s from 'src/composables/useState'
 import { ref } from 'vue';
 const contacts = [
   {
+    fb: 'dayana.bolanosbanzo',
+    email: 'dayanabb@estudiantes.uci.cu',
     img: 'https://scontent-mia3-2.xx.fbcdn.net/v/t39.30808-1/300669749_1762409884118720_3567962365987802077_n.jpg?stp=dst-jpg_p320x320&_nc_cat=102&ccb=1-7&_nc_sid=7206a8&_nc_ohc=2oJKDTfJGXcAX8a6Ccj&_nc_oc=AQnCYFTgE3SxsfEOTEXhhaectvTc5Y0VMm6dRa5NSXiGSTczw2UZHAxTVbuphmoQ1z0&_nc_ht=scontent-mia3-2.xx&oh=00_AfBIhsDYiBbZfhA_kWeq1F7EjCOwpGD2Fkxc-lcd7stfqA&oe=63629BEA',
     cargo: 'F',
     name: 'Dayana Bolaños Banzo',
-    wa: '5353054361',
-    t: '5353054361',
+    phone: '5353054361',
   },
-  {
+  /*
     img: 'https://scontent-mia3-2.xx.fbcdn.net/v/t1.6435-1/100927188_717586952330021_1562532823389175808_n.jpg?stp=c0.11.320.320a_dst-jpg_p320x320&_nc_cat=105&ccb=1-7&_nc_sid=7206a8&_nc_ohc=ohdQxuzwi-QAX_ZjjEq&_nc_ht=scontent-mia3-2.xx&oh=00_AfB5yW1Db45LM-z3Y3LCvyIXpD6n3tUGzwpzBEF9u2LESw&oe=6381FEB5',
     cargo: 'C',
     name: 'Samira de las Mercedes',
@@ -101,10 +116,10 @@ const contacts = [
   {
     img: s.value.logo,
     cargo: '',
-    name: 'en Facebook',
+    name: 'Corazón Canino en Facebook',
     link: s.value.fb,
     description: s.value.description
-  },
+  },*/
 ]
 const orgs = [
   {
@@ -209,12 +224,7 @@ a:hover {
   color: var(--q-accent);
 }
 
-.text-h7 {
-  display: flex;
-  margin-bottom: 24px;
-  color: #0006;
-  justify-content: center;
-}
+
 
 .q-page {
   overflow-inline: hidden;
@@ -229,13 +239,15 @@ section>div.column {
   width: 100%;
 }
 
-div .q-item {
+.contact-item {
   width: 100%;
   max-width: 600px;
   border: 1px solid #0001;
   border-radius: 4px;
   margin-bottom: 12px;
   padding: 8px;
+  background: #0000;
+  backdrop-filter: blur(24px);
 }
 
 section:first-child .q-item {
@@ -348,6 +360,6 @@ section:first-child .q-item {
   max-width: 98%;
   position: relative;
   bottom: -230px;
-  margin-top: -300px;
+  margin-top: -400px;
 }
 </style>

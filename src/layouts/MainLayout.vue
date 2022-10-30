@@ -6,13 +6,13 @@
           <q-item>
             <q-item-section side>
               <q-item clickable v-ripple to="/">
-                <q-avatar class="q-mr-md" size="xl" rounded>
-                  <img :src="s.logo" />
+                <q-avatar>
+                  <img :src="s.logo" style="color:#fff" />
                 </q-avatar>
               </q-item>
             </q-item-section>
             <q-item-section>
-              <b>Corazón Canino</b>
+              <span class="title">Corazón Canino</span>
             </q-item-section>
           </q-item>
         </q-toolbar-title>
@@ -44,5 +44,11 @@ import s from 'src/composables/useState';
 <style>
 :root {
   --radius: 6px
+}
+
+.title {
+  font-variant: small-caps;
+  font-weight: 900;
+  color: #fffb;
 }
 </style>

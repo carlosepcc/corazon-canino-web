@@ -30,7 +30,7 @@
           <li>Censar</li>
           <li>Alimentar</li>
           <li>Desparasitar</li>
-          <li>Esterelizar</li>
+          <li>Esterilizar</li>
           <li>Vacunar</li>
           <li>Encontrar hogares permanentes</li>
         </ul>

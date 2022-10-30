@@ -1,7 +1,7 @@
 <template>
   <q-page padding class="column items-center">
     <CarouselCustom />
-    <h6>Nuestra actividad</h6>
+    <span class="text-h7">NUESTRA ACTIVIDAD</span>
     <div class="row items-center justify-evenly" padding>
       <iframe
         src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FCorazonCanicoUCI%2Fposts%2Fpfbid0LZx9gx4vs6gBiBhNJLpsMffWcapvwuZBD1KeLz8z4sjq92dMpvzstcH9JydGnTQel&show_text=true&width=500"

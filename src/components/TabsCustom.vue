@@ -1,9 +1,9 @@
 <template>
   <q-tabs align="justify" :inline-label="$q.screen.gt.xs" :dense="props.mobileMode" narrow-indicator>
     <!-- <q-route-tab to="/" label="Inicio" /> -->
-    <q-route-tab to="/" label="Inicio" icon="pets" />
-    <q-route-tab to="/about" label="Acerca" icon="info" />
-    <q-route-tab to="/contact" label="Contacto" icon="chat" />
+    <q-route-tab class="q-pt-sm" to="/about" no-caps label="Acerca" icon="info" />
+    <q-route-tab class="q-pt-sm" to="/contact" no-caps label="Contacto" icon="chat" />
+    <q-route-tab class="q-pt-sm" to="/" no-caps label="Inicio" icon="pets" />
   </q-tabs>
 </template>
 <script setup lang="ts">
