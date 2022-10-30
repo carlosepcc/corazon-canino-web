@@ -1,5 +1,7 @@
 <template>
   <q-page padding class="column items-center">
+    <CarouselCustom />
+
     <h6>Nuestra actividad</h6>
     <div class="row items-center justify-evenly" padding>
       <iframe
@@ -23,6 +25,9 @@
     </div>
   </q-page>
 </template>
+<script setup lang="ts">
+import CarouselCustom from 'components/CarouselCustom.vue'
+</script>
 <style scoped lang="sass">
 iframe
   border: none

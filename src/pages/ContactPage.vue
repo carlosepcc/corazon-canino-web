@@ -69,7 +69,7 @@
           </q-item>
         </div>
       </section>
-      <img class="img-building" src="public/img/buildings-toon.svg">
+      <img class="img-building" src="/img/buildings-toon.svg">
     </div>
     <span class="exclamation">
       <div class="plate" @click="(e) => refillPlate(e)">
@@ -122,7 +122,7 @@ const orgs = [
     description: 'Grupo de jóvenes cubanos que luchan por el bienestar animal en Cuba. Teniendo como premisa rescatar, curar, esterilizar y dar en adopción responsable.',
   },
   {
-    logo: 'https://scontent-bog1-1.xx.fbcdn.net/v/t1.6435-9/122035111_107843244439330_1635465192292248620_n.jpg?stp=cp0_dst-jpg_e15_p370x247_q65&_nc_cat=109&ccb=1-7&_nc_sid=85a577&efg=eyJpIjoidCJ9&_nc_ohc=r2wumcdPhikAX91Pkk5&tn=0mN2lAi91TDb6Qti&_nc_ht=scontent-bog1-1.xx&oh=00_AfBxktKotQlkBAy65nZPGDG6l6J4cuI-fX9V7I_j_NN2Kg&oe=63838373',
+    logo: 'https://scontent-bog1-1.xx.fbcdn.net/v/t39.30808-1/305833555_489576096508741_7660125567385151631_n.jpg?stp=c23.0.200.200a_dst-jpg_p200x200&_nc_cat=106&ccb=1-7&_nc_sid=c6021c&_nc_ohc=G37lqB3FDWEAX8LgiPq&_nc_ht=scontent-bog1-1.xx&oh=00_AfA1lNNMLvuSt5wKAMJO3zvZlMWdC6GK_jbMs3bKYSh4ww&oe=6363F78A',
     country: 'cu',
     name: 'Equipo de Protección Animal',
     link: 'www.facebook.com/profile.php?id=100063690655399&lst=100015031837495%3A100063690655399%3A1667144373&eav=AfYO-nZG8a8KDUMTCKa5a0zBC2jnBGJLvjhYydII90uDE1w9ObG1hvs8_kiDUlAfpr8&paipv=0',
@@ -167,7 +167,7 @@ const other = [
   },
 ]
 
-const dogBark = new Audio('public/audio/dog_barking-6296.ogg')
+const dogBark = new Audio('/audio/dog_barking-6296.ogg')
 const littleDogBark = new Audio('https://bigsoundbank.com/UPLOAD/ogg/0682.ogg')
 const fillAudio = new Audio('https://bigsoundbank.com/UPLOAD/ogg/1331.ogg')
 const grownBark = new Audio('https://bigsoundbank.com/UPLOAD/ogg/2354.ogg')
