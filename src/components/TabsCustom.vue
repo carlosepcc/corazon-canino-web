@@ -1,5 +1,5 @@
 <template>
-  <q-tabs align="justify" :inline-label="$q.screen.gt.xs" :dense="mobileMode" narrow-indicator>
+  <q-tabs align="justify" :inline-label="$q.screen.gt.xs" :dense="props.mobileMode" narrow-indicator>
     <!-- <q-route-tab to="/" label="Inicio" /> -->
     <q-route-tab to="/" label="Inicio" icon="pets" />
     <q-route-tab to="/about" label="Acerca" icon="info" />

@@ -1,7 +1,6 @@
 <template>
   <q-page padding class="column items-center">
     <CarouselCustom />
-
     <h6>Nuestra actividad</h6>
     <div class="row items-center justify-evenly" padding>
       <iframe
