@@ -17,26 +17,25 @@
           </q-item>
         </q-toolbar-title>
 
+        <CustomTabs class="gt-xs" />
       </q-toolbar>
-      <q-tabs align="justify" :inline-label="false" narrow-indicator>
-        <!-- <q-route-tab to="/" label="Inicio" /> -->
-        <q-route-tab to="/" label="Inicio" icon="pets" />
-        <q-route-tab to="/about" label="Acerca" icon="info" />
-        <q-route-tab to="/contact" label="Contacto" icon="chat" />
-      </q-tabs>
     </q-header>
 
     <q-page-container>
-
       <transition>
         <keep-alive>
           <router-view />
         </keep-alive>
       </transition>
     </q-page-container>
+
+    <q-footer class="lt-sm">
+      <CustomTabs />
+    </q-footer>
   </q-layout>
 </template>
 <script setup lang="ts">
+import CustomTabs from 'src/components/TabsCustom.vue';
 import s from 'src/composables/useState';
 </script>
 
