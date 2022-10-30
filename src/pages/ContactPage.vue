@@ -1,68 +1,73 @@
 <template>
-  <q-page class="column items-center justify-evenly" padding>
-    <h7>CONTACTO</h7>
-    <div class="column alig-start">
-      <q-item v-for="contact in contacts" v-bind:key="contact.wa" clickable v-ripple
-        :href="`https://wa.me/${contact.wa}`" target="_blank">
-        <q-item-section side>
-          <q-avatar size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
-            <img v-if="contact.img" :src="contact.img" :alt="contact.name" />
-            <span v-else v-html="contact.name[0]"></span>
+  <q-page class="row justify-evenly" padding>
+    <section>
+      <h7>CONTACTO</h7>
+      <div class="column align-start q-mt-lg q-mb-xl">
+        <q-item v-for="contact in contacts" v-bind:key="contact.wa" clickable v-ripple
+          :href="`https://wa.me/${contact.wa}`" target="_blank">
+          <q-item-section side>
+            <q-avatar size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
+              <img v-if="contact.img" :src="contact.img" :alt="contact.name" />
+              <span v-else v-html="contact.name[0]"></span>
 
-            <q-badge rounded v-if="contact.cargo" :title="contact.cargo" floating color="transparent"
-              class="text-weight-bold">
-              {{ contact.cargo }}</q-badge>
-          </q-avatar>
-        </q-item-section>
-        <q-item-section>
-          <q-item-label>
-            {{ contact.name }}</q-item-label>
-          <q-item-label caption>{{ contact.wa ?? contact.link ?? '' }}</q-item-label>
-        </q-item-section>
-      </q-item>
-    </div>
+              <q-badge rounded v-if="contact.cargo" :title="contact.cargo" floating color="transparent"
+                class="text-weight-bold">
+                {{ contact.cargo }}</q-badge>
+            </q-avatar>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>
+              {{ contact.name }}</q-item-label>
+            <q-item-label caption>{{ contact.wa ?? contact.link ?? '' }}</q-item-label>
+          </q-item-section>
+        </q-item>
+      </div>
+    </section>
+    <section>
+      <h7 id="organizaciones-apoyando">ORGANIZACIONES QUE APOYAN</h7>
+      <div class="column align-start q-mt-lg q-mb-xl">
+        <q-item v-for="org in orgs" v-bind:key="org.link" :title="org.description" clickable v-ripple
+          :href="`https://${org.link}`" target="_blank">
+          <q-item-section side>
+            <q-avatar rounded size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
+              <img v-if="org.logo" :src="org.logo" :alt="org.name[0]" />
+              <span v-else v-html="org.name[0]"></span>
 
-    <h7 id="organizaciones-apoyando">ORGANIZACIONES QUE APOYAN</h7>
-    <div class="column alig-start">
-      <q-item v-for="org in orgs" v-bind:key="org.link" :title="org.description" clickable v-ripple
-        :href="`https://${org.link}`" target="_blank">
-        <q-item-section side>
-          <q-avatar rounded size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
-            <img v-if="org.logo" :src="org.logo" :alt="org.name[0]" />
-            <span v-else v-html="org.name[0]"></span>
-
-            <!-- <q-badge rounded :title="org.country" floating color="transparent" class="text-weight-bold">{{ org.country
+              <!-- <q-badge rounded :title="org.country" floating color="transparent" class="text-weight-bold">{{ org.country
             }}
             </q-badge> -->
-          </q-avatar>
-        </q-item-section>
-        <q-item-section>
-          <q-item-label>
-            {{ org.name }}</q-item-label>
-          <q-item-label caption>{{ org.description.slice(0, 60) }}..</q-item-label>
-        </q-item-section>
-      </q-item>
-    </div>
-    <h7 id="sitios-de-interes">SITIOS DE INTERÉS</h7>
-    <div class="column align-start">
-      <q-item v-for="o in other" v-bind:key="o.link" clickable v-ripple :href="`https://${o.link}`" :title="o.link"
-        target="_blank">
-        <q-item-section side>
-          <q-avatar rounded size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
-            <img v-if="o.img" :src="o.img" :alt="o.name[0]" />
-            <span v-else v-html="o.name[0]"></span>
+            </q-avatar>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>
+              {{ org.name }}</q-item-label>
+            <q-item-label caption>{{ org.description.slice(0, 60) }}..</q-item-label>
+          </q-item-section>
+        </q-item>
+      </div>
+    </section>
+    <section>
+      <h7 id="sitios-de-interes">SITIOS DE INTERÉS</h7>
+      <div class="column align-start q-mt-lg q-mb-xl">
+        <q-item v-for="o in other" v-bind:key="o.link" clickable v-ripple :href="`https://${o.link}`" :title="o.link"
+          target="_blank">
+          <q-item-section side>
+            <q-avatar rounded size="xl" class="text-weight-bolder text-uppercase" color="primary" text-color="white">
+              <img v-if="o.img" :src="o.img" :alt="o.name[0]" />
+              <span v-else v-html="o.name[0]"></span>
 
-            <!-- <q-badge :title="o.country" rounded floating color="transparent" class="text-weight-bold">{{ o.country }}
+              <!-- <q-badge :title="o.country" rounded floating color="transparent" class="text-weight-bold">{{ o.country }}
             </q-badge> -->
-          </q-avatar>
-        </q-item-section>
-        <q-item-section>
-          <q-item-label>
-            {{ o.name }}</q-item-label>
-          <q-item-label caption>{{ o.description }}</q-item-label>
-        </q-item-section>
-      </q-item>
-    </div>
+            </q-avatar>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>
+              {{ o.name }}</q-item-label>
+            <q-item-label caption>{{ o.description }}</q-item-label>
+          </q-item-section>
+        </q-item>
+      </div>
+    </section>
   </q-page>
 </template>
 <script setup lang="ts">
@@ -136,7 +141,7 @@ const other = [
     description: 'Sitio oficial de Cuban Animal Rescue',
   },
   {
-    img: 'https://eva.uci.cu/theme/trema/pix/frontpage/UCI_logon.png',
+    img: 'https://pbs.twimg.com/profile_images/1561427543990980609/efXQuZ8Y_400x400.jpg',//'https://eva.uci.cu/theme/trema/pix/frontpage/UCI_logon.png',
     country: 'cu',
     name: 'Universidad de las Ciencias Informáticas',
     link: 'www.uci.cu',
@@ -155,7 +160,7 @@ a:hover {
 }
 
 h7 {
-  margin: 56px auto 24px auto;
+  margin-bottom: 24px;
   color: #0006;
 }
 
