@@ -31,9 +31,9 @@
             <img v-if="org.logo" :src="org.logo" :alt="org.name[0]" />
             <span v-else v-html="org.name[0]"></span>
 
-            <q-badge rounded :title="org.country" floating color="transparent" class="text-weight-bold">{{ org.country
+            <!-- <q-badge rounded :title="org.country" floating color="transparent" class="text-weight-bold">{{ org.country
             }}
-            </q-badge>
+            </q-badge> -->
           </q-avatar>
         </q-item-section>
         <q-item-section>
@@ -52,8 +52,8 @@
             <img v-if="o.img" :src="o.img" :alt="o.name[0]" />
             <span v-else v-html="o.name[0]"></span>
 
-            <q-badge :title="o.country" rounded floating color="transparent" class="text-weight-bold">{{ o.country }}
-            </q-badge>
+            <!-- <q-badge :title="o.country" rounded floating color="transparent" class="text-weight-bold">{{ o.country }}
+            </q-badge> -->
           </q-avatar>
         </q-item-section>
         <q-item-section>
