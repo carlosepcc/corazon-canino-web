@@ -76,7 +76,6 @@
       </div>
       <img src="img/dog.svg" ref="pup" @mouseenter="pupBark" />
       <img src="img/dog.svg" ref="dog" @mouseenter="dogBark.play" />
-      {{ count }}
     </span>
 
   </q-page>
@@ -204,8 +203,14 @@ a:hover {
 }
 
 .text-h7 {
+  display: flex;
   margin-bottom: 24px;
   color: #0006;
+  justify-content: center;
+}
+
+.q-page {
+  overflow-inline: hidden;
 }
 
 .q-badge {
@@ -213,18 +218,27 @@ a:hover {
   background: #0002 !important
 }
 
-div.column {
-  max-width: 600px;
+section>div.column {
+  width: 100%;
 }
 
 div .q-item {
+  width: 100%;
+  max-width: 600px;
   border: 1px solid #0001;
   border-radius: 4px;
   margin-bottom: 12px;
+  padding: 8px;
 }
 
+section:first-child .q-item {
+  border-radius: 40px 4px 4px 40px;
+}
+</style>
+<style scoped>
 /* ANIMATIONS AND TRANSITIONS */
 /*DOGS*/
+
 .exclamation * {
   transition: .4s;
 }
@@ -323,7 +337,8 @@ div .q-item {
 .img-building {
   filter: blur(6px);
   z-index: -1;
-  width: 400px;
+  height: 400px;
+  max-width: 98%;
   position: relative;
   bottom: -230px;
   margin-top: -300px;
