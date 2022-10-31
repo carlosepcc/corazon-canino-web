@@ -42,23 +42,30 @@
     </q-card>
     <q-card bordered flat class="index-card">
       <q-card-section class="text-h7">OBJETIVOS</q-card-section>
-      <q-card-section>
-        <q-chat-message :text="['hey, how are you?']" sent />
-        <q-chat-message :text="['doing fine, how r you?']" />
-        <ul>
-          <li>Censar</li>
-          <li>Alimentar</li>
-          <li>Desparasitar</li>
-          <li>Esterilizar</li>
-          <li>Vacunar</li>
-          <li>Encontrar hogares permanentes</li>
-        </ul>
+      <q-card-section class="q-px-xl">
+        <q-chat-message
+          :avatar="index % 2 > 0 ? '/icons/imagotipo.webp' : '/img/dog.svg'"
+          v-for="(o, index) in objetivos"
+          v-bind:key="o"
+          :text="[o]"
+          :sent="index % 2 > 0"
+          text-color="white"
+          :bg-color="index % 2 > 0 ? 'primary' : 'secondary'"
+        />
       </q-card-section>
     </q-card>
   </q-page>
 </template>
 <script setup>
 import s from 'src/composables/useState';
+const objetivos = [
+  'Alimentar',
+  'Censar',
+  'Desparasitar',
+  'Esterilizar',
+  'Vacunar',
+  'Encontrar hogares permanentes',
+];
 </script>
 <style scoped>
 .index-card {

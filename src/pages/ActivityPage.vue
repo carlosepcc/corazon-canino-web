@@ -4,6 +4,16 @@
     <span class="text-h7">NUESTRA ACTIVIDAD</span>
     <div class="row items-center justify-evenly" padding>
       <iframe
+        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FCorazonCaninoUCI%2Fposts%2Fpfbid028G9u5ZW1HkB5M5J2uRzf1J1pEZ5aQYDnHV7rAHVjUkyXSrFsxeSve4RP6s6D5okrl&show_text=true&width=500"
+        width="500"
+        height="571"
+        style="border: none; overflow: hidden"
+        scrolling="no"
+        frameborder="0"
+        allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+      ></iframe>
+      <iframe
         src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FCorazonCaninoUCI%2Fposts%2Fpfbid0LZx9gx4vs6gBiBhNJLpsMffWcapvwuZBD1KeLz8z4sjq92dMpvzstcH9JydGnTQel&show_text=true&width=500"
         width="500"
         height="500"
