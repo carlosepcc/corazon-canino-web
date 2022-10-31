@@ -42,16 +42,40 @@
     </q-card>
     <q-card bordered flat class="index-card">
       <q-card-section class="text-h7">・ OBJETIVOS ・</q-card-section>
-      <q-card-section class="q-px-xl">
-        <q-chat-message
+      <q-card-section class="row justify-evenly q-gutter-md">
+        <q-item
+          class="text-dark text-bold"
+          style="
+            max-width: 40%;
+            width: 100%;
+            border: 1px solid #0001;
+            border-radius: 20px;
+          "
+          v-for="i in objetivos"
+          v-bind:key="i"
+        >
+          <q-item-section side>
+            <q-icon color="dark" name="pets" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label class="row">{{ i }}</q-item-label>
+          </q-item-section>
+        </q-item>
+        <!-- <q-chat-message
+          avatar="/icons/imagotipo.webp"
+          :text="objetivos"
+          text-color="white"
+          bg-color="secondary"
+        /> -->
+        <!-- <q-chat-message
           :avatar="index % 2 > 0 ? '/icons/imagotipo.webp' : '/img/dog.svg'"
           v-for="(o, index) in objetivos"
           v-bind:key="o"
           :text="[o]"
           :sent="index % 2 > 0"
           text-color="white"
-          :bg-color="index % 2 > 0 ? 'primary' : 'accent'"
-        />
+          :bg-color="index % 2 > 0 ? 'secondary' : 'dark'"
+        /> -->
         <!-- <q-chat-message
           text-color="white"
           avatar="/img/dog.svg"
@@ -76,25 +100,27 @@ import AnimalCard from 'components/AnimalCard.vue';
 import { animalStore } from 'src/stores/animalStore';
 
 const objetivos = [
-  'Alimentar 🍗',
+  'Alimentar',
   'Censar',
   'Desparasitar',
   'Esterilizar',
   'Vacunar',
-  '🏠 Encontrar hogares permanentes!',
+  'Encontrar hogares permanentes',
 ];
 </script>
 <style scoped lang="sass">
-.index-card,.q-img,.q-chat-message
-  transition: .5s
+.index-card,.q-img,.q-chat-message,.q-item,.animal-card
+  transition: .4s
 .q-img
   transition: 1s
 .index-card
   width: 100%
   max-width: 600px
 
-.index-card:hover
-   transform: scale(1.1)
+
+
+.index-card:hover,.index-card .q-item:hover,.animal-card:hover
+   transform: scale(1.07)
 .q-img:hover
   transform: scale(1.05) rotate(-3deg)
 

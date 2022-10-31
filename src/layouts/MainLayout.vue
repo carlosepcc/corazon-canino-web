@@ -33,17 +33,16 @@ import CustomTabs from 'src/components/TabsCustom.vue';
 import s from 'src/composables/useState';
 </script>
 
-<style>
-:root {
-  --radius: 6px;
-}
+<style lang="sass">
+:root
+  --radius: 6px
 
-.title {
-  font-variant: small-caps;
-  font-weight: 900;
-  color: #fffb;
-}
-body {
-  background: #fefefe;
-}
+
+.title
+  font-variant: small-caps
+  font-weight: 900
+  color: #fffb
+
+body
+  background: #fefefe
 </style>
