@@ -3,18 +3,10 @@
     <q-header elevated class="bg-primary text-white" height-hint="98">
       <q-toolbar>
         <q-toolbar-title>
-          <q-item>
-            <q-item-section side>
-              <q-item clickable v-ripple to="/">
-                <q-avatar>
-                  <img :src="s.logo" style="color:#fff" />
-                </q-avatar>
-              </q-item>
-            </q-item-section>
-            <q-item-section>
-              <span class="title">Corazón Canino</span>
-            </q-item-section>
-          </q-item>
+          <q-avatar size="xl">
+            <img :src="s.logo" />
+          </q-avatar>
+          <span class="title q-ml-md">Corazón Canino</span>
         </q-toolbar-title>
 
         <CustomTabs class="gt-xs" />
@@ -43,12 +35,15 @@ import s from 'src/composables/useState';
 
 <style>
 :root {
-  --radius: 6px
+  --radius: 6px;
 }
 
 .title {
   font-variant: small-caps;
   font-weight: 900;
   color: #fffb;
+}
+body {
+  background: #fefefe;
 }
 </style>
