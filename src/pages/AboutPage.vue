@@ -43,6 +43,8 @@
     <q-card bordered flat class="index-card">
       <q-card-section class="text-h7">OBJETIVOS</q-card-section>
       <q-card-section>
+        <q-chat-message :text="['hey, how are you?']" sent />
+        <q-chat-message :text="['doing fine, how r you?']" />
         <ul>
           <li>Censar</li>
           <li>Alimentar</li>
