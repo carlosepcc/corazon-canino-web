@@ -25,7 +25,7 @@
       </q-card-section>
     </q-card>
     <q-card bordered flat class="index-card">
-      <q-card-section class="text-h7 q-mb-xs">META</q-card-section>
+      <q-card-section class="text-h7 q-mb-xs">・ META ・</q-card-section>
       <q-card-section>
         La no existencia, para <strong>finales del 2022</strong>, de perros sin
         <strong>esterilizar</strong> y <strong>desparasitar</strong> dentro de
@@ -41,7 +41,7 @@
       </q-card-section>
     </q-card>
     <q-card bordered flat class="index-card">
-      <q-card-section class="text-h7">OBJETIVOS</q-card-section>
+      <q-card-section class="text-h7">・ OBJETIVOS ・</q-card-section>
       <q-card-section class="q-px-xl">
         <q-chat-message
           :avatar="index % 2 > 0 ? '/icons/imagotipo.webp' : '/img/dog.svg'"

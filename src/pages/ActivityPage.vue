@@ -1,7 +1,7 @@
 <template>
   <q-page padding class="column items-center">
     <CarouselCustom />
-    <span class="text-h7">NUESTRA ACTIVIDAD</span>
+    <span class="text-h7">・ NUESTRA ACTIVIDAD ・</span>
     <div class="row items-center justify-evenly" padding>
       <!-- Si puedes ayudarnos con donaciones monetarias, utiliza los siguientes
       datos: Tarjeta CUP: 9205-9598-7658-6091 Número a confirmar: +53 5 3054361

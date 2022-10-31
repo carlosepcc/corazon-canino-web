@@ -2,7 +2,7 @@
   <q-page class="column q-pb-xl" padding>
     <div class="row justify-evenly">
       <section>
-        <span class="text-h7">CONTACTO</span>
+        <span class="text-h7">・ CONTACTO ・</span>
         <div class="column align-start q-mt-lg q-mb-xl">
           <q-item
             v-for="contact in contacts"
@@ -87,7 +87,7 @@
         </div>
       </section>
       <section>
-        <span class="text-h7">ORGANIZACIONES QUE APOYAN</span>
+        <span class="text-h7">・ ORGANIZACIONES QUE APOYAN ・</span>
         <div class="column align-start q-mt-lg q-mb-xl">
           <q-item
             class="contact-item"
@@ -125,7 +125,7 @@
         </div>
       </section>
       <section>
-        <span class="text-h7">SITIOS DE INTERÉS</span>
+        <span class="text-h7">・ SITIOS DE INTERÉS ・</span>
         <div class="column align-start q-mt-lg q-mb-xl">
           <q-item
             class="contact-item"
