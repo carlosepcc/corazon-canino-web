@@ -44,6 +44,7 @@
             <q-item-section side>
               <q-btn-group flat>
                 <q-btn
+                  color="green"
                   size="lg"
                   round
                   v-if="contact.phone"
@@ -54,53 +55,30 @@
                   title="Contactar a través de WhatsApp"
                 />
                 <q-btn flat icon="more_vert">
-                  <q-menu anchor="bottom left" self="top right">
-                    <q-btn-group push>
-                      <q-btn
-                        round
-                        v-if="contact.phone"
-                        push
-                        icon="call"
-                        :href="`tel:${contact.phone}`"
-                        title="Llamar"
-                      />
-                      <q-btn
-                        size="lg"
-                        round
-                        v-if="contact.phone"
-                        push
-                        icon="sms"
-                        :href="`sms:${contact.phone}`"
-                        title="Enviar SMS"
-                      />
-                      <q-btn
-                        size="lg"
-                        round
-                        v-if="contact.email"
-                        push
-                        icon="email"
-                        :href="`mailto:${contact.email}`"
-                        :title="`Enviar email a ${contact.email}`"
-                      />
-                      <q-btn
-                        size="lg"
-                        round
-                        v-if="contact.geo"
-                        push
-                        icon="place"
-                        :href="`geo:${contact.email}`"
-                        :title="`Ir a ${contact.geo}`"
-                      />
-                      <q-btn
-                        size="lg"
-                        round
-                        v-if="contact.fb"
-                        push
-                        icon="facebook"
-                        :href="`https://www.facebook.com/${contact.fb}`"
-                        title="Contactar a través de Facebook"
-                      />
-                    </q-btn-group>
+                  <q-menu
+                    :offset="[0, 20]"
+                    anchor="bottom left"
+                    self="top right"
+                  >
+                    <q-item
+                      v-for="i in socials"
+                      v-bind:key="i.link"
+                      clickable
+                      :href="i.link"
+                    >
+                      <q-item-section side>
+                        <q-icon
+                          :name="i.icon"
+                          :color="i.color ?? 'primary'"
+                          :style="i.color ? `color:${i.color}` : ''"
+                        />
+                      </q-item-section>
+                      <q-item-section
+                        ><q-item-label class="text-dark">{{
+                          i.label
+                        }}</q-item-label></q-item-section
+                      >
+                    </q-item>
                   </q-menu>
                 </q-btn>
               </q-btn-group>
@@ -206,6 +184,35 @@
 <script setup lang="ts">
 import s from 'src/composables/useState';
 import { ref } from 'vue';
+const socials = [
+  {
+    color: 'green',
+    icon: 'maps_ugc',
+    link: 'https://wa.me/5353054361',
+    label: 'WhatsApp',
+  },
+  {
+    icon: 'call',
+    link: 'tel:5353054361',
+    label: 'Llamar',
+  },
+  {
+    icon: 'sms',
+    link: 'sms:5353054361',
+    label: 'Enviar SMS',
+  },
+  {
+    icon: 'email',
+    link: 'mailto:dayanabb@estudiantes.uci.cu?subject=CorazónCanino',
+    label: 'Correo electrónico',
+  },
+  {
+    color: '#3b5998',
+    icon: 'facebook',
+    link: 'https://facebook.com/dayana.bolanosbanzo',
+    label: 'Facebook',
+  },
+];
 const contacts = [
   {
     fb: 'dayana.bolanosbanzo',
@@ -252,7 +259,7 @@ const orgs = [
 ];
 const other = [
   {
-    img: s.value.logo,
+    img: '/icons/imagotipo.webp',
     country: 'cu',
     name: `${s.value.name} en Facebook`,
     link: s.value.fb,
@@ -353,6 +360,7 @@ section > div.column {
 }
 
 section:first-child .q-item {
+  padding: 4px 4px 4px 12px;
   border-radius: 40px 4px 4px 40px;
 }
 </style>

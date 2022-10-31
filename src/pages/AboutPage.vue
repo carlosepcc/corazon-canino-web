@@ -1,5 +1,5 @@
 <template>
-  <q-page class="column items-center justify-evenly" padding>
+  <q-page class="column items-center justify-evenly q-pb-xl" padding>
     <q-img
       src="icons/imagotipo.svg"
       width="256px"
@@ -50,8 +50,15 @@
           :text="[o]"
           :sent="index % 2 > 0"
           text-color="white"
-          :bg-color="index % 2 > 0 ? 'primary' : 'secondary'"
+          :bg-color="index % 2 > 0 ? 'primary' : 'accent'"
         />
+        <!-- <q-chat-message
+          text-color="white"
+          avatar="/img/dog.svg"
+          bg-color="accent"
+        >
+          <q-spinner-dots size="2rem"
+        /></q-chat-message> -->
       </q-card-section>
     </q-card>
   </q-page>
@@ -59,34 +66,41 @@
 <script setup>
 import s from 'src/composables/useState';
 const objetivos = [
-  'Alimentar',
+  'Alimentar 🍗',
   'Censar',
   'Desparasitar',
   'Esterilizar',
   'Vacunar',
-  'Encontrar hogares permanentes',
+  '🏠 Encontrar hogares permanentes!',
 ];
 </script>
-<style scoped>
-.index-card {
-  width: 100%;
-  max-width: 600px;
-}
+<style scoped lang="sass">
+.index-card,.q-img,.q-chat-message
+  transition: .5s
+.q-img
+  transition: 1s
+.index-card
+  width: 100%
+  max-width: 600px
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+.index-card:hover
+   transform: scale(1.1)
+.q-img:hover
+  transform: scale(1.05) rotate(-3deg)
 
-a:hover {
-  color: var(--q-accent);
-}
+a
+  text-decoration: none
+  color: inherit
 
-.q-card {
-  margin-top: 32px;
-}
 
-ul {
-  text-align: start;
-}
+a:hover
+  color: var(--q-accent)
+
+
+.q-card
+  margin-top: 32px
+
+
+ul
+  text-align: start
 </style>
