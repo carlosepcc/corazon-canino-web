@@ -70,6 +70,8 @@ const icons = [
 ];
 </script>
 <style lang="sass">
-// .animal-card
+.animal-card
+  .q-img,div.text-h1
+    height: 150px
 //   min-width: 250px
 </style>
