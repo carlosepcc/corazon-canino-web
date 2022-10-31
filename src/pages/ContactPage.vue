@@ -160,8 +160,8 @@
         </div>
       </section>
     </div>
-    <div id="yard" :style="s.isOnMobile ? 'bottom:60px;' : 'bottom:0;'">
-      <span :class="`exclamation ${s.isOnMobile ? 'bg-primary' : ''}`">
+    <div id="yard" :style="$q.screen.lt.md ? 'bottom:0' : 'bottom:-30px'">
+      <span :class="`exclamation ${$q.screen.lt.md ? 'bg-primary' : ''}`">
         <div class="plate" @click="(e) => refillPlate(e)"></div>
         <img
           src="img/dog.svg"
@@ -183,7 +183,9 @@
 </template>
 <script setup lang="ts">
 import s from 'src/composables/useState';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
+import { useQuasar } from 'quasar';
+const $q = useQuasar();
 const socials = [
   {
     color: 'green',
@@ -373,7 +375,7 @@ section:first-child .q-item {
   flex-direction: row;
   justify-content: center;
   position: fixed;
-  bottom: 60px;
+  bottom: 0;
   width: 100%;
 }
 .exclamation * {
@@ -395,6 +397,7 @@ section:first-child .q-item {
   margin-top: 120px;
   margin-inline: auto;
   width: 90%;
+  height: 76px;
   min-width: fit-content;
   display: block;
   text-align: center;

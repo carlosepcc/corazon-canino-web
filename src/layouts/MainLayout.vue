@@ -9,7 +9,7 @@
           <span class="title q-ml-md">Corazón Canino</span>
         </q-toolbar-title>
 
-        <CustomTabs class="gt-xs" />
+        <CustomTabs class="gt-sm" />
       </q-toolbar>
     </q-header>
 
@@ -23,7 +23,7 @@
       </router-view>
     </q-page-container>
 
-    <q-footer class="lt-sm">
+    <q-footer class="lt-md">
       <CustomTabs />
     </q-footer>
   </q-layout>
