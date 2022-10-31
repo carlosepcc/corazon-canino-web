@@ -116,15 +116,8 @@ const contacts = [
     cargo: 'F',
     name: 'Dayana Bolaños Banzo',
     phone: '5353054361',
-    geo: '22.985059,-82.465497',
   },
   /*
-    img: 'https://scontent-mia3-2.xx.fbcdn.net/v/t1.6435-1/100927188_717586952330021_1562532823389175808_n.jpg?stp=c0.11.320.320a_dst-jpg_p320x320&_nc_cat=105&ccb=1-7&_nc_sid=7206a8&_nc_ohc=ohdQxuzwi-QAX_ZjjEq&_nc_ht=scontent-mia3-2.xx&oh=00_AfB5yW1Db45LM-z3Y3LCvyIXpD6n3tUGzwpzBEF9u2LESw&oe=6381FEB5',
-    cargo: 'C',
-    name: 'Samira de las Mercedes',
-    wa: '5352662875',
-    t: '5352662875',
-  },
   {
     img: s.value.logo,
     cargo: '',
