@@ -14,13 +14,13 @@
     </q-header>
 
     <q-page-container>
-      <transition>
-        <router-view v-slot="{ Component }">
-          <keep-alive>
+      <router-view v-slot="{ Component }">
+        <transition
+          ><keep-alive>
             <component :is="Component" />
           </keep-alive>
-        </router-view>
-      </transition>
+        </transition>
+      </router-view>
     </q-page-container>
 
     <q-footer class="lt-sm">

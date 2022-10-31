@@ -61,10 +61,20 @@
         /></q-chat-message> -->
       </q-card-section>
     </q-card>
+    <span class="text-h7" style="margin-top: 150px">・ BASE DE DATOS ・</span>
+    <div class="row q-gutter-lg justify-evenly">
+      <AnimalCard
+        v-for="a in animalStore.animals"
+        v-bind:key="a.names"
+        v-bind="a"
+      />
+    </div>
   </q-page>
 </template>
 <script setup>
-import s from 'src/composables/useState';
+import AnimalCard from 'components/AnimalCard.vue';
+import { animalStore } from 'src/stores/animalStore';
+
 const objetivos = [
   'Alimentar 🍗',
   'Censar',
