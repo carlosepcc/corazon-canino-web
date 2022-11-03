@@ -13,13 +13,13 @@
               <q-avatar
                 size="xl"
                 class="text-weight-bolder text-uppercase"
-                color="primary"
+                color="primary-gradient"
                 text-color="white"
               >
                 <img
                   v-if="contact.img"
                   :src="contact.img"
-                  :alt="contact.name"
+                  :alt="contact.name[0]"
                 />
                 <span v-else v-html="contact.name[0]"></span>
 
@@ -142,7 +142,7 @@
                 rounded
                 size="xl"
                 class="text-weight-bolder text-uppercase"
-                color="primary"
+                color="primary-gradient"
                 text-color="white"
               >
                 <img v-if="o.img" :src="o.img" :alt="o.name[0]" />
@@ -161,7 +161,9 @@
       </section>
     </div>
     <div id="yard" :style="$q.screen.lt.md ? 'bottom:0' : 'bottom:-30px'">
-      <span :class="`exclamation ${$q.screen.lt.md ? 'bg-primary' : ''}`">
+      <span
+        :class="`exclamation ${$q.screen.lt.md ? 'bg-primary-gradient' : ''}`"
+      >
         <div class="plate" @click="(e) => refillPlate(e)"></div>
         <img
           src="img/dog.svg"

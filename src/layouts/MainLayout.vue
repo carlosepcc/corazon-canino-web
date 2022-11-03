@@ -1,6 +1,6 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <q-header elevated class="bg-primary text-white" height-hint="98">
+    <q-header elevated class="bg-primary-gradient text-white" height-hint="98">
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar size="xl">
@@ -23,7 +23,7 @@
       </router-view>
     </q-page-container>
 
-    <q-footer class="lt-md">
+    <q-footer elevated class="lt-md bg-primary-gradient">
       <CustomTabs />
     </q-footer>
   </q-layout>

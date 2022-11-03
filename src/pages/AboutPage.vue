@@ -25,7 +25,9 @@
       </q-card-section>
     </q-card>
     <q-card bordered flat class="index-card">
-      <q-card-section class="text-h7 q-mb-xs">・ META ・</q-card-section>
+      <q-card-section class="text-h7 q-ma-xs q-pa-xs"
+        >・ META ・</q-card-section
+      >
       <q-card-section>
         La no existencia, para <strong>finales del 2022</strong>, de perros sin
         <strong>esterilizar</strong> y <strong>desparasitar</strong> dentro de
@@ -46,7 +48,8 @@
         <q-item
           class="text-dark text-bold"
           style="
-            max-width: 40%;
+            max-width: 24ch;
+            min-width: 17ch;
             width: 100%;
             border: 1px solid #0001;
             border-radius: 20px;
@@ -61,28 +64,6 @@
             <q-item-label class="row">{{ i }}</q-item-label>
           </q-item-section>
         </q-item>
-        <!-- <q-chat-message
-          avatar="/icons/imagotipo.webp"
-          :text="objetivos"
-          text-color="white"
-          bg-color="secondary"
-        /> -->
-        <!-- <q-chat-message
-          :avatar="index % 2 > 0 ? '/icons/imagotipo.webp' : '/img/dog.svg'"
-          v-for="(o, index) in objetivos"
-          v-bind:key="o"
-          :text="[o]"
-          :sent="index % 2 > 0"
-          text-color="white"
-          :bg-color="index % 2 > 0 ? 'secondary' : 'dark'"
-        /> -->
-        <!-- <q-chat-message
-          text-color="white"
-          avatar="/img/dog.svg"
-          bg-color="accent"
-        >
-          <q-spinner-dots size="2rem"
-        /></q-chat-message> -->
       </q-card-section>
     </q-card>
     <span class="text-h7" style="margin-top: 150px">・ BASE DE DATOS ・</span>
