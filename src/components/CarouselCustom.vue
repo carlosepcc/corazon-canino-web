@@ -90,6 +90,10 @@ const slides = ref([
     name: 'fotografia-22-11',
     img: 'https://scontent-bog1-1.xx.fbcdn.net/v/t39.30808-6/308641939_129847723134321_4325042436397815896_n.jpg?stp=dst-jpg_p526x296&_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=AvAyznpyEFoAX8q239i&_nc_oc=AQnyE-wohgm_vJXnJkHKXkyvwh1opIF1HqA6ESTQoAdQbiWe4ncimVFqKtpld96aVhU&_nc_ht=scontent-bog1-1.xx&oh=00_AfD7NvU22Srpl1fdgeF9_3zhoO_5wmkfyUvoc21Q2f7Zzg&oe=63643708',
   },
+  {
+    name: 'rifa-2',
+    img: 'https://scontent-mia3-2.xx.fbcdn.net/v/t39.30808-6/316426542_148649127920847_6036870328486674587_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=WtgCwXqTtZcAX84JbOA&_nc_ht=scontent-mia3-2.xx&oh=00_AfBJXyXtr3Gq8L60kI7bvc2kp7Wzm6lEXjoWvOvSF0q3Vw&oe=638AFDCB',
+  },
 ]);
 const slide = ref(slides.value[0].name);
 </script>
