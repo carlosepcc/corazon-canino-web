@@ -2,18 +2,19 @@ import { ref } from 'vue';
 
 export const animalStore = ref({
   animals: [
-    {
-      img: 'https://scontent-bog1-1.xx.fbcdn.net/v/t39.30808-6/313289193_139525348833225_649793092657178900_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=dbeb18&_nc_ohc=GQYlQdxGFzcAX9PHVkk&_nc_ht=scontent-bog1-1.xx&oh=00_AfCxnW5UTwSPCoYHYHe_Ti86aXnqfGsJbMmkzoicJpTSRg&oe=6363D71A',
-      names: ['Lady'],
-      health: {
-        state: 0,
-        diseases: [
-          'Retención de líquido',
-          'Enfermedad de la garrapata',
-          'Sarna',
-        ],
-      },
-    },
+    // {
+    //   img: 'https://scontent-bog1-1.xx.fbcdn.net/v/t39.30808-6/313289193_139525348833225_649793092657178900_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=dbeb18&_nc_ohc=GQYlQdxGFzcAX9PHVkk&_nc_ht=scontent-bog1-1.xx&oh=00_AfCxnW5UTwSPCoYHYHe_Ti86aXnqfGsJbMmkzoicJpTSRg&oe=6363D71A',
+    //   names: ['Lady'],
+    //   health: {
+    //     state: 0,
+    //     diseases: [
+    //       'Fallecida',
+    //       'Retención de líquido',
+    //       'Enfermedad de la garrapata',
+    //       'Sarna',
+    //     ],
+    //   },
+    // },
     {
       img: 'https://scontent-bog1-1.xx.fbcdn.net/v/t39.30808-6/313441477_140248448760915_4024878272859783083_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=Y6ERxycV8vkAX9eM6dv&_nc_ht=scontent-bog1-1.xx&oh=00_AfBWfBVhVX8NpDXcThlwMdqp91_FkPsp6pDeJdXF-vQmDQ&oe=6365932E',
       names: ['Sofi'],
