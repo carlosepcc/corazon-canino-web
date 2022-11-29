@@ -6,7 +6,7 @@ export const animalStore = ref({
       img: 'https://scontent-bog1-1.xx.fbcdn.net/v/t39.30808-6/313289193_139525348833225_649793092657178900_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=dbeb18&_nc_ohc=GQYlQdxGFzcAX9PHVkk&_nc_ht=scontent-bog1-1.xx&oh=00_AfCxnW5UTwSPCoYHYHe_Ti86aXnqfGsJbMmkzoicJpTSRg&oe=6363D71A',
       names: ['Lady'],
       health: {
-        state: 1,
+        state: 0,
         diseases: [
           'Retención de líquido',
           'Enfermedad de la garrapata',
